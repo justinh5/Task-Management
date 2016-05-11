@@ -1,6 +1,7 @@
 package TaskM;
 
 import javafx.application.Application;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import TaskM.controller.baseController;
 
@@ -33,6 +34,7 @@ public class Main extends Application {
 
         mainController.setScreen(Main.scene1ID);    // load the login screen
         primaryStage.setTitle("Task Manager");      // set the stage title
+        primaryStage.getIcons().add(new Image(this.getClass().getResourceAsStream("img/icon.png")));  // set icon
         primaryStage.show();                        // show the stage
 
         // Run this when the stage's red X is clicked.
