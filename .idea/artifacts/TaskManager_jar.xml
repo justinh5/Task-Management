@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TaskManager:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TaskManager_jar</output-path>
+    <root id="archive" name="TaskManager.jar">
+      <element id="module-output" name="TaskManager" />
+      <element id="extracted-dir" path="C:/Program Files/Java/jdk1.8.0_73/db/lib/derby.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
