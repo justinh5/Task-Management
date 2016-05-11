@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TaskM.controller.loginController">
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label contentDisplay="CENTER" text="Login or Register" textAlignment="CENTER">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="errorLabel" text="Invalid username or password!" textFill="#fa1000" visible="false">
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </Label>
+            <HBox prefHeight="33.0" prefWidth="330.0">
+               <children>
+                  <Label text="Username">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="usernameTxtField" prefHeight="30.0" prefWidth="192.0" promptText="username">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="8.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="33.0" prefWidth="330.0">
+               <children>
+                  <Label text="Password">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <PasswordField fx:id="passwordTxtField" prefHeight="30.0" prefWidth="192.0" promptText="password">
+                     <HBox.margin>
+                        <Insets left="14.0" />
+                     </HBox.margin>
+                  </PasswordField>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="0.0" prefWidth="330.0">
+               <children>
+                  <Button fx:id="loginButton" mnemonicParsing="false" onAction="#loginButtonClick" text="Login" textAlignment="CENTER">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding></Button>
+                  <Button fx:id="regButton" mnemonicParsing="false" onAction="#signupButtonClick" text="Register new account" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets left="64.0" top="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <left>
+      <Region prefHeight="320.0" prefWidth="89.0" BorderPane.alignment="CENTER" />
+   </left>
+   <top>
+      <Region prefHeight="46.0" prefWidth="419.0" BorderPane.alignment="CENTER" />
+   </top>
+</BorderPane>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<BorderPane minHeight="500.0" minWidth="700.0" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TaskM.controller.managerController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                <MenuItem  onAction="#logout" mnemonicParsing="false" text="Logout" />
+                <MenuItem onAction="#exit" mnemonicParsing="false" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+                <MenuItem onAction="#deleteAll" mnemonicParsing="false" text="Remove all" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem onAction="#aboutClick" mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <bottom>
+      <HBox prefHeight="20.0" prefWidth="419.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Version 1.0" />
+         </children>
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+   <center>
+      <GridPane prefHeight="358.0" prefWidth="603.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" prefWidth="200.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="40.0" minWidth="-Infinity" prefWidth="40.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" prefWidth="200.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="40.0" minWidth="-Infinity" prefWidth="40.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" prefWidth="200.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.valignment="CENTER">
+               <children>
+                  <Label text="To Do">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin></Label>
+                  <ListView fx:id="list1" prefHeight="325.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </ListView>
+                  <HBox alignment="BOTTOM_LEFT" prefHeight="0.0" prefWidth="201.0" VBox.vgrow="NEVER">
+                     <children>
+                        <Button fx:id="addButton1" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#addClick" text="add">
+                            <graphic>
+                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/add.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                                </Button>
+                        <Button fx:id="delButton1" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#deleteClick" text="delete" textAlignment="CENTER">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                            <graphic>
+                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/delete.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.valignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="In Progress">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin></Label>
+                  <ListView fx:id="list2" prefHeight="325.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </ListView>
+                  <HBox alignment="BOTTOM_LEFT" prefHeight="0.0" prefWidth="201.0" VBox.vgrow="NEVER">
+                     <children>
+                        <Button fx:id="addButton2" mnemonicParsing="false" onAction="#addClick" text="add">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                            <graphic>
+                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/add.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="delButton2" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#deleteClick" text="delete">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                            <graphic>
+                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/delete.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4">
+               <children>
+                  <Label text="Done">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin></Label>
+                  <ListView fx:id="list3" prefHeight="325.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets right="10.0" />
+                     </VBox.margin>
+                  </ListView>
+                  <HBox alignment="BOTTOM_LEFT" prefHeight="0.0" prefWidth="201.0" VBox.vgrow="NEVER">
+                     <children>
+                        <Button fx:id="addButton3" mnemonicParsing="false" onAction="#addClick" text="add">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                            <graphic>
+                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/add.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="delButton3" mnemonicParsing="false" onAction="#deleteClick" text="delete">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                            <graphic>
+                                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/delete.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+               <children>
+                  <Button fx:id="oneTotwo" onAction="#moveClick" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="&gt;" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets top="100.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="twoToone" onAction="#moveClick" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="&lt;">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3">
+               <children>
+                  <Button fx:id="twoTothree" onAction="#moveClick" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="&gt;">
+                     <VBox.margin>
+                        <Insets top="100.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="threeTotwo" onAction="#moveClick" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="&lt;">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>
